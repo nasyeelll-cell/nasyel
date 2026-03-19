@@ -1,70 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>For Brian</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #1a1a2e, #16213e);
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+<meta charset="UTF-8">
+<title>For Brian</title>
 
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 40px;
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      max-width: 500px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #1f1f3a, #0f172a);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+}
 
-    h1 {
-      margin-bottom: 10px;
-      font-size: 28px;
-    }
+/* floating glow background */
+body::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,122,162,0.3), transparent 70%);
+  animation: float 8s ease-in-out infinite;
+}
 
-    p {
-      line-height: 1.6;
-      font-size: 15px;
-      opacity: 0.9;
-    }
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-40px); }
+}
 
-    .highlight {
-      color: #ff7aa2;
-    }
+.card {
+  position: relative;
+  background: rgba(255,255,255,0.07);
+  padding: 45px;
+  border-radius: 25px;
+  backdrop-filter: blur(18px);
+  max-width: 520px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(255,122,162,0.2);
+  animation: fadeIn 1.5s ease;
+}
 
-    .footer {
-      margin-top: 20px;
-      font-style: italic;
-      opacity: 0.7;
-    }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 20px;
-      background: #ff7aa2;
-      color: white;
-      cursor: pointer;
-    }
+h1 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  background: linear-gradient(45deg, #ff7aa2, #ffc1d6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    button:hover {
-      background: #ff4f81;
-    }
-  </style>
+p {
+  line-height: 1.7;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.highlight {
+  color: #ff7aa2;
+  font-weight: 600;
+}
+
+.footer {
+  margin-top: 25px;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+button {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #ff7aa2, #ff4f81);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 0 15px rgba(255,122,162,0.6);
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255,122,162,0.9);
+}
+
+/* tiny sparkles */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: sparkle 5s linear infinite;
+}
+
+@keyframes sparkle {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  to {
+    transform: translateY(-600px) scale(0.5);
+    opacity: 0;
+  }
+}
+</style>
 </head>
+
 <body>
 
 <div class="card">
-  <h1>Hey, Rian? or Brian? 😆</h1>
+  <h1>hey, Rian? or Brian? 😆</h1>
 
   <p>
     Semangat kuliahnya ya.  
@@ -91,6 +146,18 @@
 
   <button onclick="alert('Take care yaa 🤍')">Click me</button>
 </div>
+
+<!-- sparkles -->
+<script>
+for (let i = 0; i < 30; i++) {
+  const s = document.createElement("div");
+  s.classList.add("sparkle");
+  s.style.left = Math.random() * window.innerWidth + "px";
+  s.style.top = Math.random() * window.innerHeight + "px";
+  s.style.animationDuration = (3 + Math.random() * 5) + "s";
+  document.body.appendChild(s);
+}
+</script>
 
 </body>
 </html>
