@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Brian</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 15px;
+      opacity: 0.9;
+    }
+
+    .highlight {
+      color: #ff7aa2;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #ff7aa2;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff4f81;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h1>Hey, Rian? or Brian? 😆</h1>
+
+  <p>
+    Semangat kuliahnya ya.  
+    Gue cuma stranger yang bakal doain lo biar sukses ke depannya  
+    dan lulus tepat waktu. <span class="highlight">Aamiin 🤍</span>
+  </p>
+
+  <p>
+    I hope someday we can meet at the right time.
+  </p>
+
+  <p>
+    Untuk sekarang, kita <span class="highlight">senggol-senggolan api dulu 🔥</span>
+  </p>
+
+  <p>
+    Maybe in another time, kalau lagi ada waktu luang,  
+    kita ngobrol lagi kayak awal gue kenal lo.
+  </p>
+
+  <div class="footer">
+    Salam dari putri Ciledug 👑
+  </div>
+
+  <button onclick="alert('Take care yaa 🤍')">Click me</button>
+</div>
+
+</body>
+</html>
